@@ -1,0 +1,30 @@
+{
+  "name": "ajs-react-tdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test",
+    "build": "webpack",
+    "example": "node ./example/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "chai": "^3.5.0",
+    "enzyme": "^2.7.1",
+    "express": "^4.14.1",
+    "mocha": "^3.2.0",
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "sinon": "^1.17.7",
+    "sinon-chai": "^2.8.0",
+    "webpack": "^2.2.1"
+  }
+}

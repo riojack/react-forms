@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+</head>
+<body>
+<div id="application"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"
+        integrity="sha256-iHJxral3dKeWuIA++6qfaB/GObc/x/4gKNquSrSVs2A=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"
+        integrity="sha256-4FvckXVvCHhJExpCnv2Ac4BIdxFXnA9xzWOgw8KcIpk=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="app.js"></script>
+<script>
+    (function () {
+
+        function whenTextChanges(newText) {
+            console.log("New text! ", newText);
+        }
+
+        var props = {
+                onChange: whenTextChanges
+            },
+
+
+            mountElement = document.getElementById('application'),
+            textEntry = React.createElement(MyApp.TextEntry, props);
+
+        ReactDOM.render(textEntry, mountElement);
+    })();
+</script>
+</body>
+</html>

@@ -13,18 +13,36 @@
 <script type="text/javascript" src="app.js"></script>
 <script>
     (function () {
+        var appState = {
+            text: ''
+        };
 
         function whenTextChanges(newText) {
-            console.log("New text! ", newText);
+            appState.text = newText;
+        }
+
+        function whenSaveHappens() {
+            // We'll use the experimental window.fetch() that Chrome, Firefox, and Edge browsers have provided.
+            // More information here: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+            var request = new Request('/save-data', {
+                method: 'post',
+                headers: new Headers({
+                    'content-type': 'application/json'
+                })
+            });
+
+            window.fetch(request, { body: JSON.stringify(appState) })
+                .then(function () { console.log('Successfully saved data to the server!'); })
+                .catch(function(err) { console.log('Failed to save to server: ', err); });
         }
 
         var props = {
-                onChange: whenTextChanges
+                onTextChange: whenTextChanges,
+                onSave: whenSaveHappens
             },
 
-
             mountElement = document.getElementById('application'),
-            textEntry = React.createElement(MyApp.TextEntry, props);
+            textEntry = React.createElement(MyApp.DataEntryApp, props);
 
         ReactDOM.render(textEntry, mountElement);
     })();

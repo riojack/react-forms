@@ -1,5 +1,5 @@
-import TextEntry from './TextEntry';
+import DataEntryApp from './DataEntryApp';
 
 window.MyApp = {
-    TextEntry
+    DataEntryApp
 };

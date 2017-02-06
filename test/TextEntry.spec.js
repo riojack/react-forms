@@ -10,7 +10,7 @@ describe('Text entry tests', () => {
 
     beforeEach(() => {
         props = {
-            onChange: stub()
+            onTextChange: stub()
         };
 
         element = shallow(<TextEntry {...props} />);
@@ -41,6 +41,6 @@ describe('Text entry tests', () => {
 
         input.simulate('change', fakeEvent);
 
-        assert.calledWithExactly(props.onChange, typedText);
+        assert.calledWithExactly(props.onTextChange, typedText);
     });
 });

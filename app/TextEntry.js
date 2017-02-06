@@ -1,7 +1,7 @@
 import React from 'react';
 
 function whenTextChanges(event) {
-    this.props.onChange(event.target.value);
+    this.props.onTextChange(event.target.value);
 }
 
 class TextEntry extends React.Component {

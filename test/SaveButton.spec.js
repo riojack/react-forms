@@ -12,7 +12,7 @@ describe('Save button tests', () => {
         props = {
             onSave: stub()
         };
-        element = shallow(<SaveButton {...props} />)
+        element = shallow(<SaveButton {...props} />);
     });
 
     it('should be a div', () => {
